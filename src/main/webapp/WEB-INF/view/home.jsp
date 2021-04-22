@@ -12,6 +12,15 @@
         User: <security:authentication property="principal.username" /><br/><br/>
         Role(s): <security:authentication property="principal.authorities" />
     </p>
+
+    <security:authorize access="hasRole('MANAGER')">
+        <p><a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a> (Only for Manager peeps)</p>
+    </security:authorize>
+
+    <security:authorize access="hasRole('ADMIN')">
+        <p><a href="${pageContext.request.contextPath}/systems">Admin Meeting</a> (Only for Admin peeps)</p>
+    </security:authorize>
+
     <form:form action="${pageContext.request.contextPath}/logout" method="POST">
         <button type="submit" value="Logout">Logout</button>
     </form:form>
