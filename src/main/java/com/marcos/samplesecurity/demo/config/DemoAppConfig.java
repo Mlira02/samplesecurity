@@ -60,15 +60,15 @@ public class DemoAppConfig
         securityDataSource.setUser(env.getProperty("jdbc.user"));
         securityDataSource.setPassword(env.getProperty("jdbc.password"));
 
-        securityDataSource.setInitialPoolSize(getIntPropety("connection.pool.initialPoolSize"));
-        securityDataSource.setMinPoolSize(getIntPropety("connection.pool.minPoolSize"));
-        securityDataSource.setMaxPoolSize(getIntPropety("connection.pool.maxPoolSize"));
-        securityDataSource.setMaxIdleTime(getIntPropety("connection.pool.maxIdleTime"));
+        securityDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
+        securityDataSource.setMinPoolSize(getIntProperty("connection.pool.minPoolSize"));
+        securityDataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));
+        securityDataSource.setMaxIdleTime(getIntProperty("connection.pool.maxIdleTime"));
 
         return securityDataSource;
     }
 
-    private int getIntPropety(String propName)
+    private int getIntProperty(String propName)
     {
         String propVal = env.getProperty(propName);
 
